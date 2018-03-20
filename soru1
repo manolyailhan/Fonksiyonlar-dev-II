@@ -1,0 +1,27 @@
+#tsm:toplam satış miktarı
+#hm:hammadde maliyeti
+#bog:bakım onarım giderleri
+#sg:sevkiyat giderleri
+#sahg:satın alınan hizmet giderleri
+
+print("Katma Değer Ciro Hesaplama")
+def katmaDegerCiro(tsm,hm,bog,sg,sahg):
+    global kdc
+    kdc=tsm-(hm+bog+sg+sahg)
+    if kdc>1000:
+        print("işletme katma değer cirosu yüksek.",kdc)
+    elif 500<kdc<999:
+        print("işletme katma değer cirosu normal.",kdc)
+    elif kdc<500:
+        print("katma değer cirosu düşük.",kdc)
+    return kdc
+
+tsm=int(input("Toplam satış miktarı giriniz:"))
+hm=int(input("Hammadde maliyeti giriniz:"))
+bog=int(input("Bakım onarım giderlerini giriniz:"))
+sg=int(input("Sevkiyat giderlerini giriniz:"))
+sahg=int(input("Satın alınan hizmet giderlerini giriniz:"))
+
+
+katmaDegerCiro=katmaDegerCiro(tsm,hm,bog,sg,sahg)
+         
